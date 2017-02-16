@@ -301,7 +301,7 @@
 			 *   The extracted troops.
 			 */
 			var _lf_extractOwnTroops = function(ie_wrapper) {
-				var la_nameCells	= IC.myGM.$$('.table01 .title_img_row th', ie_wrapper);
+				var la_nameCells	= IC.myGM.$$('.table01 .title_img_row th .tooltip', ie_wrapper);
 				var la_numberCells	= IC.myGM.$$('.table01 .count td', ie_wrapper);
 				
 				var ro_troops = _go_storageProvider.ownTroopList();
@@ -310,7 +310,7 @@
 					var li_number = IC.Ikariam.getInt(la_numberCells[i].innerHTML);
 					
 					if(li_number > 0)
-						ro_troops.addTroop(la_nameCells[i].title, li_number);
+						ro_troops.addTroop(la_nameCells[i].innerHTML, li_number);
 				}
 				
 				return ro_troops;
@@ -326,12 +326,12 @@
 			 *   The extracted troops.
 			 */
 			var _lf_extractForeignTroops = function(ie_wrapper) {
-				var la_nameCells	= IC.myGM.$$('.table01 .title_img_row th:not(:first-child)', ie_wrapper);
+				var la_nameCells	= IC.myGM.$$('.table01 .title_img_row th:not(:first-child) .tooltip', ie_wrapper);
 				var la_numberRows	= IC.myGM.$$('.table01 tr:not(.title_img_row)', ie_wrapper);
 				var lo_numberCells	= {};
 				
 				for(var i = 0; i < la_numberRows.length; i++) {
-					var ls_playerName	= IC.myGM.$('td a', la_numberRows[i]).innerHTML;
+					var ls_playerName = IC.myGM.$('td a', la_numberRows[i]).innerHTML.trim();
 					
 					if(!lo_numberCells[ls_playerName]) {
 						lo_numberCells[ls_playerName] = [];
@@ -349,7 +349,7 @@
 						var li_number = IC.Ikariam.getInt(ia_numberCells[i].innerHTML);
 						
 						if(li_number > 0)
-							lo_playerTroops.addTroop(la_nameCells[i].title, li_number);
+							lo_playerTroops.addTroop(la_nameCells[i].innerHTML, li_number);
 					}
 					
 					if(lo_playerTroops.isEmpty === false)
@@ -382,7 +382,7 @@
 				var la_foreignStatus = ['friends', 'enemies'];
 				
 				for(var i = 0; i < la_foreignStatus.length; i++) {
-					var la_foreignTroops = _lf_extractForeignTroops(la_wrappers[i + 1]);
+					var la_foreignTroops = _lf_extractForeignTroops(la_wrappers[i + 2]);
 					
 					for(var j = 0; j < la_foreignTroops.length; j++) {
 						ro_return.addTroopList(la_foreignStatus[i], la_foreignTroops[j]);

@@ -38,6 +38,7 @@
 // @history			3.4		Release: ???
 // @history			3.4		Feature: Up to 60 characters of messages are displayed in the message overview.
 // @history			3.4		Bugfix: No jumping header bar anymore due to MMO links.
+// @history			3.4		Bugfix: Troop information was displayed incorrectly.
 // 
 // @history			3.3		Release: 05.06.2016
 // @history			3.3		Feature: Add @connect information to avoid requests from Tampermonkey.
