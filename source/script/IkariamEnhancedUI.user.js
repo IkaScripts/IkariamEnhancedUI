@@ -35,6 +35,10 @@
 // @bug				All				The selected island is not centered in world view.
 // @bug				All				If you are zooming to more than 100%, the view is not centered correctly after a page reload.
 // 
+// @history			3.4		Release: ???
+// @history			3.4		Feature: Up to 60 characters of messages are displayed in the message overview.
+// @history			3.4		Bugfix: No jumping header bar anymore due to MMO links.
+// 
 // @history			3.3		Release: 05.06.2016
 // @history			3.3		Feature: Add @connect information to avoid requests from Tampermonkey.
 // @history			3.3		Feature: Daily expenses in resource information if amount is negative.
@@ -254,7 +258,7 @@ function EnhancedUI(IC) {
 		'#GF_toolbar > ul						{ width: auto !important; text-align: center !important; pointer-events: none; } \
 		 #GF_toolbar > ul > *					{ pointer-events: auto; } \
 		 #GF_toolbar #mmoNewsticker				{ display: inline-block !important; position: relative !important; } \
-		 #GF_toolbar #mmoNewsticker > ul		{ width: auto !important; } \
+		 #GF_toolbar #mmoNewsticker > ul		{ width: 300px !important; } \
 		 #' + IC.myGM.prefix + 'toolbar			{ float: right; } \
 		 #' + IC.myGM.prefix + 'toolbar > div	{ display: inline-block; position: relative; float: right; margin: 0px 5px; }',
 		'scriptToolbar'
