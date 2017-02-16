@@ -69,6 +69,50 @@
 		};
 		
 		/**
+		 * Storage for the inline message functions.
+		 * 
+		 * @type	{object}
+		 */
+		var _go_inlineMessage = new function() {
+			/**
+			 * Replace the links.
+			 */
+			var _lf_doShowInline = function() {
+				var la_messageRows = IC.myGM.$$('#deleteMessages tr.entry');
+				var li_displayMaxCharacters = 60;
+				
+				la_messageRows.forEach(function(ie_messageRow) {
+					var le_subject	= IC.myGM.$('.subject', ie_messageRow);
+					var ls_id		= ie_messageRow.id.replace('message', '');
+					var le_text		= IC.myGM.$('#tbl_mail' + ls_id + ' .msgText');
+					
+					var ls_inlineText = le_text.innerHTML.replace(/<br>/gi, ' ').replace(/\s+/gi, ' ');
+					
+					if(ls_inlineText.length > li_displayMaxCharacters)
+						ls_inlineText = ls_inlineText.substring(0, li_displayMaxCharacters - 6) + ' (...)';
+					
+					le_subject.innerHTML += '<br><sub>' + ls_inlineText + '</sub>';
+				});
+			};
+			
+			/**
+			 * Update the settings to execute the callback or delete the handler.
+			 * 
+			 * @param	{boolean}	ib_displayInlineMessage
+			 *   If the user selected the checkbox to display inline messages.
+			 */
+			this.updateSettings = function(ib_displayInlineMessage) {
+				var la_postboxes = ['diplomacyAdvisor', 'diplomacyAdvisorOutBox', 'diplomacyAdvisorArchive', 'diplomacyAdvisorArchiveOutBox'];
+				if(ib_displayInlineMessage === true) {
+					IC.RefreshHandler.add(la_postboxes, 'inlineMessage', _lf_doShowInline);
+					return;
+				}
+				
+				IC.RefreshHandler.remove(la_postboxes, 'inlineMessage');
+			};
+		};
+		
+		/**
 		 * Storage for the message signature functions.
 		 * 
 		 * @type	{object}
@@ -134,6 +178,9 @@
 		
 		// Replace urls.
 		IC.Options.addCheckbox('replaceURL', 'messages', 1, true, IC.Language.$('message.options.replaceURL'), { changeCallback: _go_replaceURL.updateSettings });
+		
+		// Display message text teaser in overview.
+		IC.Options.addCheckbox('inlineMessage', 'messages', 1, true, IC.Language.$('message.options.inlineMessage'), { changeCallback: _go_inlineMessage.updateSettings });
 		
 		// Player specific signatures.
 		var la_options = [
