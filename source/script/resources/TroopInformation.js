@@ -484,5 +484,90 @@
 			};
 		};
 		
+		/**
+		 * Storage for the link barracks and shipyard functions.
+		 * 
+		 * @type	{object}
+		 */
+		var _go_linkBarrackShipyard = new function() {
+			/**
+			 * Adds a link to the container.
+			 * 
+			 * @param	{String}	is_type
+			 *   The link type (units / fleet).
+			 * @param	{Element}	ie_container
+			 *   The element which should be container for the link.
+			 */
+			var _lf_addLink = function(is_type, ie_container) {
+				var lo_data = IC.ika.getScreen().data;
+				
+				var ls_linkText = is_type === 'units' ? IC.Language.$('troopInformation.link.gotoBarracks') : IC.Language.$('troopInformation.link.gotoShipyard');
+				ls_linkText = '(' + ls_linkText + ')';
+				
+				var ls_buildingType = is_type === 'units' ? 'barracks' : 'shipyard';
+				
+				var li_position = -1;
+				for(var i = 0; i < lo_data.position.length; i++) {
+					if(lo_data.position[i].building === ls_buildingType) {
+						li_position = i;
+						break;
+					}
+				}
+				
+				if(li_position >= 0) {
+					var ls_href = '?view=%building%&cityId=%cityId%&position=%position%'
+											.replace(/%building%/gi, ls_buildingType)
+											.replace(/%cityId%/gi, lo_data.id)
+											.replace(/%position%/gi, li_position);
+					
+					IC.myGM.addElement('a', ie_container, {
+						innerHTML:	ls_linkText,
+						href:		ls_href,
+						onclick:	'ajaxHandlerCall(this.href);return false;',
+						style:		[['margin-left', '5px']]
+					});
+				}
+			};
+			
+			/**
+			 * Link barack and shipyard from troop overview screen.
+			 */
+			var _lf_doLinkBarrackShipyardOverview = function() {
+				var le_container = IC.myGM.$('.header', IC.myGM.$('#tabUnits'));
+				_lf_addLink('units', le_container);
+				
+				le_container = IC.myGM.$('.header', IC.myGM.$('#tabShips'));
+				_lf_addLink('fleet', le_container);
+			};
+			
+			/**
+			 * Link barrack and shipyard in dismiss units screen.
+			 */
+			var _lf_doLinkBarrackShipyardDismiss = function() {
+				var ls_type = IC.myGM.$('#js_garrisonEditForm input[name=function]').value.replace(/fire/gi, '').toLowerCase();
+				var le_container = IC.myGM.$('#js_garrisonEditForm .header');
+				
+				_lf_addLink(ls_type, le_container);
+			};
+			
+			/**
+			 * Update the settings to execute the callback or delete the handler.
+			 * 
+			 * @param	{boolean}	ib_linkBarrackShipyard
+			 *   If the user selected the checkbox to link barrackand shipyard.
+			 */
+			this.updateSettings = function(ib_linkBarrackShipyard) {
+				if(ib_linkBarrackShipyard === true) {
+					IC.RefreshHandler.add('cityMilitary', 'linkBarrackShipyardOverview', _lf_doLinkBarrackShipyardOverview);
+					IC.RefreshHandler.add('garrisonEdit', 'linkBarrackShipyardDismiss', _lf_doLinkBarrackShipyardDismiss);
+					return;
+				}
+				
+				IC.RefreshHandler.remove('cityMilitary', 'linkBarrackShipyardOverview');
+				IC.RefreshHandler.remove('garrisonEdit', 'linkBarrackShipyardDismiss');
+			};
+		};
+		
 		IC.Options.addCheckbox('showTroopInformation', 'diverseOptions', 1, true, IC.Language.$('troopInformation.options.show'), { changeCallback: _go_troopInformation.updateSettings });
+		IC.Options.addCheckbox('linkBarrackShipyard', 'diverseOptions', 1, true, IC.Language.$('troopInformation.options.linkBarrackShipyard'), { changeCallback: _go_linkBarrackShipyard.updateSettings });
 	})();
