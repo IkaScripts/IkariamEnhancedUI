@@ -135,7 +135,12 @@
 	},
 	"troopInformation": {
 		"options": {
-			"show":	"Show troop info"
+			"show":					"Show troop info",
+			"linkBarrackShipyard":	"Link barracks and shipyard from troop overview and dismiss units screen"
+		},
+		"link": {
+			"gotoBarracks":	"goto barracks",
+			"gotoShipyard":	"goto shipyard"
 		},
 		"units": {
 			"label":	"Units in %$1",
