@@ -36,6 +36,7 @@
 // @bug				All				If you are zooming to more than 100%, the view is not centered correctly after a page reload.
 // 
 // @history			3.4		Release: ???
+// @history			3.2.2	Core: Update to Version 2.3.3 - Bug fix (crew conversion broken)
 // @history			3.4		Feature: Up to 60 characters of messages are displayed in the message overview.
 // @history			3.4		Feature: Link barracks / shipyard from troop overview / dismiss units screen.
 // @history			3.4		Bugfix: No jumping header bar anymore due to MMO links.
@@ -269,47 +270,47 @@ function EnhancedUI(IC) {
 	IC.Options.addWrapper('diverseOptions', IC.Language.$('diverse.options.wrapperTitle'));
 	
 	IC.con.groupCollapsed('IkariamEnhancedUI initalization ...');
-	IC.con.timeStamp('IkariamEnhancedUI: toolbar and general styles created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: toolbar and general styles created');
 	
 	//@ENHANCE_VIEW@//
 	
-	IC.con.timeStamp('IkariamEnhancedUI: view functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: view functions created');
 	
 	//@ENHANCE_ISLAND@//
 	
-	IC.con.timeStamp('IkariamEnhancedUI: island functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: island functions created');
 	
 	//@ENHANCE_FINANCE@//
 	
-	IC.con.timeStamp('IkariamEnhancedUI: finance functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: finance functions created');
 	
 	//@ENHANCE_MISSING_RESOURCES@//
 	
-	IC.con.timeStamp('IkariamEnhancedUI: missing resource functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: missing resource functions created');
 	
 	//@ENHANCE_TOOLTIPS@//
 	
-	IC.con.timeStamp('IkariamEnhancedUI: tooltip functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: tooltip functions created');
 	
 	//@ENHANCE_ZOOM@//
 	
-	IC.con.timeStamp('IkariamEnhancedUI: zoom functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: zoom functions created');
 	
 	//@ENHANCE_RESOURCE_INFORMATION@//
 	
-	IC.con.timeStamp('IkariamEnhancedUI: resource information functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: resource information functions created');
 	
 	//@ENHANCE_HIGHSCORE@//
 	
-	IC.con.timeStamp('IkariamEnhancedUI: highscore functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: highscore functions created');
 	
 	//@ENHANCE_MESSAGES@//
 	
-	IC.con.timeStamp('IkariamEnhancedUI: message functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: message functions created');
 	
 	//@ENHANCE_TROOP_INFORMATION@//
 	
-	IC.con.timeStamp('IkariamEnhancedUI: troop information functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: troop information functions created');
 	IC.con.groupEnd();
 }
 
