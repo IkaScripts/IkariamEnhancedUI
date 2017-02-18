@@ -36,7 +36,7 @@
 // @bug				All				If you are zooming to more than 100%, the view is not centered correctly after a page reload.
 // 
 // @history			3.4		Release: ???
-// @history			3.2.2	Core: Update to Version 2.3.3 - Bug fix (crew conversion broken)
+// @history			3.4		Core: Update to Version 2.3.3 - Bug fix (crew conversion broken)
 // @history			3.4		Feature: Up to 60 characters of messages are displayed in the message overview.
 // @history			3.4		Feature: Link barracks / shipyard from troop overview / dismiss units screen.
 // @history			3.4		Bugfix: No jumping header bar anymore due to MMO links.
