@@ -111,6 +111,7 @@
         "options": {
             "wrapperTitle": "",
             "replaceURL": "",
+            "inlineMessage": "",
             "signature": {
                 "use": {
                     "description": "",
@@ -134,7 +135,12 @@
     },
     "troopInformation": {
         "options": {
-            "show": ""
+            "show": "",
+            "linkBarrackShipyard": ""
+        },
+        "link": {
+            "gotoBarracks": "",
+            "gotoShipyard": ""
         },
         "units": {
             "label": "",

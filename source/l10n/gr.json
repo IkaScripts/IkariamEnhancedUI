@@ -111,6 +111,7 @@
         "options": {
             "wrapperTitle": "Μηνύματα",
             "replaceURL": "Δημιουργία ενεργών συνδέσμων στα μηνύματα",
+            "inlineMessage": "",
             "signature": {
                 "use": {
                     "description": "",
@@ -134,7 +135,12 @@
     },
     "troopInformation": {
         "options": {
-            "show": "Πληροφορίες πληροφοριών στρατού"
+            "show": "Πληροφορίες πληροφοριών στρατού",
+            "linkBarrackShipyard": ""
+        },
+        "link": {
+            "gotoBarracks": "",
+            "gotoShipyard": ""
         },
         "units": {
             "label": "Μονάδες στην πόλη %$1",

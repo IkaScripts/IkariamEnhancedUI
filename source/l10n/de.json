@@ -111,6 +111,7 @@
         "options": {
             "wrapperTitle": "Nachrichten",
             "replaceURL": "Links in Nachrichten anklickbar machen",
+            "inlineMessage": "Bette die ersten Zeichen einer Nachricht direkt in der Nachrichtenübersicht ein",
             "signature": {
                 "use": {
                     "description": "Diese Signatur verwenden:",
@@ -134,7 +135,12 @@
     },
     "troopInformation": {
         "options": {
-            "show": "Truppeninformationen anzeigen"
+            "show": "Truppeninformationen anzeigen",
+            "linkBarrackShipyard": "Kaserne und Kriegswerft in Truppenübersicht und Einheiten entlassen verlinken"
+        },
+        "link": {
+            "gotoBarracks": "zur Kaserne",
+            "gotoShipyard": "zur Kriegswerft"
         },
         "units": {
             "label": "Einheiten in %$1",
