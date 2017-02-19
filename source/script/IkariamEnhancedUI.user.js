@@ -35,7 +35,7 @@
 // @bug				All				The selected island is not centered in world view.
 // @bug				All				If you are zooming to more than 100%, the view is not centered correctly after a page reload.
 // 
-// @history			3.4		Release: ???
+// @history			3.4		Release: 19.02.2017
 // @history			3.4		Core: Update to Version 2.3.3 - Bug fix (crew conversion broken)
 // @history			3.4		Feature: Up to 60 characters of messages are displayed in the message overview.
 // @history			3.4		Feature: Link barracks / shipyard from troop overview / dismiss units screen.
