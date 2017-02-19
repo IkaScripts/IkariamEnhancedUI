@@ -1,15 +1,15 @@
 {
     "view": {
         "options": {
-            "wrapperTitle": "",
-            "moveLoadingCircle": "",
+            "wrapperTitle": "Görüntüle",
+            "moveLoadingCircle": "Yüklenme dairesini pozisyon barına sürükle",
             "hideBirds": "",
             "noVerticalCenterInTownAdvisor": ""
         }
     },
     "island": {
         "options": {
-            "showColonizingCityInfo": ""
+            "showColonizingCityInfo": "Şehirleri kolonileştirme hakkında bilgi göster"
         }
     },
     "finance": {
@@ -18,24 +18,24 @@
             "shortUpkeepReductionTable": ""
         },
         "income": {
-            "perHour": "",
-            "perDay": "",
+            "perHour": "Saat başına düşen gelir",
+            "perDay": "Gün başına düşen gelir",
             "start": ""
         },
         "upkeep": {
             "reason": {
-                "0": "",
-                "1": "",
-                "2": ""
+                "0": "Birlikler",
+                "1": "Gemiler",
+                "2": "Birlikler & Gemiler"
             },
             "basic": "",
             "supply": "",
-            "result": ""
+            "result": "Toplam Maaliyet"
         }
     },
     "missingResources": {
         "options": {
-            "wrapperTitle": "",
+            "wrapperTitle": "Eksik Kaynaklar",
             "show": "",
             "showPositive": "",
             "showColoured": ""
@@ -52,25 +52,25 @@
             "wrapperTitle": "",
             "zoomView": "",
             "factor": {
-                "world": "",
-                "island": "",
-                "town": ""
+                "world": "Dünya haritasını yakınlaştır:",
+                "island": "Ada görünümüne yakınlaştır:",
+                "town": "Köy görünümüne yakınlaştır:"
             },
             "scaleChildren": {
                 "label": "",
-                "world": "",
-                "island": "",
+                "world": "Dünya haritası",
+                "island": "Ada görünümü",
                 "town": ""
             },
             "accessKeyLabel": ""
         },
-        "zoomIn": "",
+        "zoomIn": "Yakınlaştır",
         "factor": "",
-        "zoomOut": ""
+        "zoomOut": "Uzaklaştır"
     },
     "resourceInformation": {
         "options": {
-            "wrapperTitle": "",
+            "wrapperTitle": "Kaynak Bilgisi",
             "resourceQuicklinkEnhancements": "",
             "directIncome": {
                 "show": "",
@@ -109,12 +109,13 @@
     },
     "message": {
         "options": {
-            "wrapperTitle": "",
+            "wrapperTitle": "Mesajlar",
             "replaceURL": "",
+            "inlineMessage": "",
             "signature": {
                 "use": {
                     "description": "",
-                    "none": "",
+                    "none": "İmza yok",
                     "global": "",
                     "server": "",
                     "player": ""
@@ -127,14 +128,19 @@
         },
         "replacedUrl": {
             "notification": {
-                "header": "",
+                "header": "Dikkat!",
                 "text": ""
             }
         }
     },
     "troopInformation": {
         "options": {
-            "show": ""
+            "show": "Birlik bilgisini göster",
+            "linkBarrackShipyard": ""
+        },
+        "link": {
+            "gotoBarracks": "",
+            "gotoShipyard": ""
         },
         "units": {
             "label": "",
@@ -146,9 +152,9 @@
             "label": "",
             "own": "",
             "friends": "",
-            "enemies": ""
+            "enemies": "Düşman gemileri"
         },
-        "button": "",
+        "button": "Birlik bilgileri",
         "header": "",
         "noTroops": ""
     },
@@ -158,42 +164,42 @@
         },
         "name": {
             "resource": {
-                "gold": "",
-                "wood": "",
-                "wine": "",
+                "gold": "Altın",
+                "wood": "İnşaa Malzemeleri",
+                "wine": "Şarap",
                 "marble": "",
-                "glass": "",
-                "sulfur": ""
+                "glass": "Kristal Bardak",
+                "sulfur": "Sülfür"
             },
             "unit": {
-                "swordsman": "",
+                "swordsman": "Kılıç ustası",
                 "phalanx": "",
-                "archer": "",
+                "archer": "Okçu",
                 "marksman": "",
-                "mortar": "",
+                "mortar": "Havan",
                 "slinger": "",
-                "catapult": "",
+                "catapult": "Mancınık",
                 "ram": "",
                 "steamgiant": "",
                 "bombardier": "",
-                "cook": "",
-                "medic": "",
+                "cook": "Pişir",
+                "medic": "Doktor Who?",
                 "girocopter": "",
-                "spearman": "",
-                "spartan": ""
+                "spearman": "Mızrakçı",
+                "spartan": "Spartalı"
             },
             "ship": {
                 "ballista": "",
-                "catapult": "",
-                "flamethrower": "",
-                "mortar": "",
+                "catapult": "Mancınık Gemisi",
+                "flamethrower": "Ateş Gemisi",
+                "mortar": "Havan Gemisi",
                 "ram": "",
                 "steamboat": "",
                 "rocketship": "",
-                "submarine": "",
+                "submarine": "Dalış Botu",
                 "paddlespeedship": "",
                 "ballooncarrier": "",
-                "tender": "",
+                "tender": "İhale",
                 "transport": ""
             }
         }

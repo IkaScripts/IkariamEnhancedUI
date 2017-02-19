@@ -111,6 +111,7 @@
 		"options": {
 			"wrapperTitle":			"Messages",
 			"replaceURL":			"Make links in messages clickable",
+			"inlineMessage":		"Embed the first few characters of each message in the messages overview",
 			"signature": {
 				"use": {
 					"description":	"Use this signature:",
@@ -134,7 +135,12 @@
 	},
 	"troopInformation": {
 		"options": {
-			"show":	"Show troop info"
+			"show":					"Show troop info",
+			"linkBarrackShipyard":	"Link barracks and shipyard from troop overview and dismiss units screen"
+		},
+		"link": {
+			"gotoBarracks":	"goto barracks",
+			"gotoShipyard":	"goto shipyard"
 		},
 		"units": {
 			"label":	"Units in %$1",

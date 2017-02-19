@@ -111,6 +111,7 @@
         "options": {
             "wrapperTitle": "Сообщения",
             "replaceURL": "Сделать ссылки в сообщениях интерактивными",
+            "inlineMessage": "",
             "signature": {
                 "use": {
                     "description": "",
@@ -134,7 +135,12 @@
     },
     "troopInformation": {
         "options": {
-            "show": "Показать информацию о войсках"
+            "show": "Показать информацию о войсках",
+            "linkBarrackShipyard": ""
+        },
+        "link": {
+            "gotoBarracks": "",
+            "gotoShipyard": ""
         },
         "units": {
             "label": "Количество %$1",

@@ -3,7 +3,7 @@
 // @description		Enhancements for the user interface of Ikariam.
 // @namespace		Tobbe
 // @author			Tobbe
-// @version			3.3
+// @version			3.4
 // @license			MIT License
 //
 // @name:de			Ikariam Enhanced UI
@@ -16,32 +16,32 @@
 // 
 // @include			/https?:\/\/s[0-9]*-[a-z]{2}\.ikariam\.gameforge\.com\/.*/
 // 
-// @require			https://greasyfork.org/scripts/5574-ikariam-core/code/Ikariam%20Core.js?version=105280
+// @require			https://greasyfork.org/scripts/5574-ikariam-core/code/Ikariam%20Core.js?version=176047
 // 
 // @connect			greasyfork.org
 //
 // 
-// @resource		de					http://resources.ikascripts.de/IkariamEnhancedUI/v3.3/de.json
-// @resource		gr					http://resources.ikascripts.de/IkariamEnhancedUI/v3.3/gr.json
-// @resource		fr					http://resources.ikascripts.de/IkariamEnhancedUI/v3.3/fr.json
-// @resource		it					http://resources.ikascripts.de/IkariamEnhancedUI/v3.3/it.json
-// @resource		lv					http://resources.ikascripts.de/IkariamEnhancedUI/v3.3/lv.json
-// @resource		ru					http://resources.ikascripts.de/IkariamEnhancedUI/v3.3/ru.json
-// @resource		tr					http://resources.ikascripts.de/IkariamEnhancedUI/v3.3/tr.json
-// @resource		core_de				http://resources.ikascripts.de/IkariamCore/v2.3.2/core_de.json
-// @resource		core_de_settings	http://resources.ikascripts.de/IkariamCore/v2.3.2/core_de_settings.json
-// @resource		core_fr				http://resources.ikascripts.de/IkariamCore/v2.3.2/core_fr.json
-// @resource		core_fr_settings	http://resources.ikascripts.de/IkariamCore/v2.3.2/core_fr_settings.json
-// @resource		core_gr				http://resources.ikascripts.de/IkariamCore/v2.3.2/core_gr.json
-// @resource		core_gr_settings	http://resources.ikascripts.de/IkariamCore/v2.3.2/core_gr_settings.json
-// @resource		core_it				http://resources.ikascripts.de/IkariamCore/v2.3.2/core_it.json
-// @resource		core_it_settings	http://resources.ikascripts.de/IkariamCore/v2.3.2/core_it_settings.json
-// @resource		core_lv				http://resources.ikascripts.de/IkariamCore/v2.3.2/core_lv.json
-// @resource		core_lv_settings	http://resources.ikascripts.de/IkariamCore/v2.3.2/core_lv_settings.json
-// @resource		core_ru				http://resources.ikascripts.de/IkariamCore/v2.3.2/core_ru.json
-// @resource		core_ru_settings	http://resources.ikascripts.de/IkariamCore/v2.3.2/core_ru_settings.json
-// @resource		core_tr				http://resources.ikascripts.de/IkariamCore/v2.3.2/core_tr.json
-// @resource		core_tr_settings	http://resources.ikascripts.de/IkariamCore/v2.3.2/core_tr_settings.json
+// @resource		de					http://resources.ikascripts.de/IkariamEnhancedUI/v3.4/de.json
+// @resource		gr					http://resources.ikascripts.de/IkariamEnhancedUI/v3.4/gr.json
+// @resource		fr					http://resources.ikascripts.de/IkariamEnhancedUI/v3.4/fr.json
+// @resource		it					http://resources.ikascripts.de/IkariamEnhancedUI/v3.4/it.json
+// @resource		lv					http://resources.ikascripts.de/IkariamEnhancedUI/v3.4/lv.json
+// @resource		ru					http://resources.ikascripts.de/IkariamEnhancedUI/v3.4/ru.json
+// @resource		tr					http://resources.ikascripts.de/IkariamEnhancedUI/v3.4/tr.json
+// @resource		core_de				http://resources.ikascripts.de/IkariamCore/v2.3.3/core_de.json
+// @resource		core_de_settings	http://resources.ikascripts.de/IkariamCore/v2.3.3/core_de_settings.json
+// @resource		core_fr				http://resources.ikascripts.de/IkariamCore/v2.3.3/core_fr.json
+// @resource		core_fr_settings	http://resources.ikascripts.de/IkariamCore/v2.3.3/core_fr_settings.json
+// @resource		core_gr				http://resources.ikascripts.de/IkariamCore/v2.3.3/core_gr.json
+// @resource		core_gr_settings	http://resources.ikascripts.de/IkariamCore/v2.3.3/core_gr_settings.json
+// @resource		core_it				http://resources.ikascripts.de/IkariamCore/v2.3.3/core_it.json
+// @resource		core_it_settings	http://resources.ikascripts.de/IkariamCore/v2.3.3/core_it_settings.json
+// @resource		core_lv				http://resources.ikascripts.de/IkariamCore/v2.3.3/core_lv.json
+// @resource		core_lv_settings	http://resources.ikascripts.de/IkariamCore/v2.3.3/core_lv_settings.json
+// @resource		core_ru				http://resources.ikascripts.de/IkariamCore/v2.3.3/core_ru.json
+// @resource		core_ru_settings	http://resources.ikascripts.de/IkariamCore/v2.3.3/core_ru_settings.json
+// @resource		core_tr				http://resources.ikascripts.de/IkariamCore/v2.3.3/core_tr.json
+// @resource		core_tr_settings	http://resources.ikascripts.de/IkariamCore/v2.3.3/core_tr_settings.json
 // 
 // @grant			unsafeWindow
 // @grant			GM_setValue
@@ -55,6 +55,13 @@
 // @bug				Opera & Chrome	No updating of the missing resources is possible due to a missing modification listener.
 // @bug				All				The selected island is not centered in world view.
 // @bug				All				If you are zooming to more than 100%, the view is not centered correctly after a page reload.
+// 
+// @history			3.4		Release: 19.02.2017
+// @history			3.4		Core: Update to Version 2.3.3 - Bug fix (crew conversion broken)
+// @history			3.4		Feature: Up to 60 characters of messages are displayed in the message overview.
+// @history			3.4		Feature: Link barracks / shipyard from troop overview / dismiss units screen.
+// @history			3.4		Bugfix: No jumping header bar anymore due to MMO links.
+// @history			3.4		Bugfix: Troop information was displayed incorrectly.
 // 
 // @history			3.3		Release: 05.06.2016
 // @history			3.3		Feature: Add @connect information to avoid requests from Tampermonkey.
@@ -252,7 +259,7 @@
  * {@link https://greasyfork.org/scripts/4369-enhanced-ui Script on Greasy Fork}
  * {@link https://github.com/IkaScripts/IkariamEnhancedUI Script on GitHub}
  * 
- * @version	3.3
+ * @version	3.4
  * @author	Tobbe	<contact@ikascripts.de>
  * 
  * @global
@@ -275,7 +282,7 @@ function EnhancedUI(IC) {
 		'#GF_toolbar > ul						{ width: auto !important; text-align: center !important; pointer-events: none; } \
 		 #GF_toolbar > ul > *					{ pointer-events: auto; } \
 		 #GF_toolbar #mmoNewsticker				{ display: inline-block !important; position: relative !important; } \
-		 #GF_toolbar #mmoNewsticker > ul		{ width: auto !important; } \
+		 #GF_toolbar #mmoNewsticker > ul		{ width: 300px !important; } \
 		 #' + IC.myGM.prefix + 'toolbar			{ float: right; } \
 		 #' + IC.myGM.prefix + 'toolbar > div	{ display: inline-block; position: relative; float: right; margin: 0px 5px; }',
 		'scriptToolbar'
@@ -284,7 +291,7 @@ function EnhancedUI(IC) {
 	IC.Options.addWrapper('diverseOptions', IC.Language.$('diverse.options.wrapperTitle'));
 	
 	IC.con.groupCollapsed('IkariamEnhancedUI initalization ...');
-	IC.con.timeStamp('IkariamEnhancedUI: toolbar and general styles created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: toolbar and general styles created');
 	
 	// General functions to enhance the view.
 	(function() {
@@ -337,7 +344,7 @@ function EnhancedUI(IC) {
 		});
 	})();
 	
-	IC.con.timeStamp('IkariamEnhancedUI: view functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: view functions created');
 	
 	// Functions for the island view.
 	(function() {
@@ -399,7 +406,7 @@ function EnhancedUI(IC) {
 		IC.Options.addLine('diverseOptions', 1);
 	})();
 	
-	IC.con.timeStamp('IkariamEnhancedUI: island functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: island functions created');
 	
 	// Functions for the finance popup.
 	(function(){
@@ -734,7 +741,7 @@ function EnhancedUI(IC) {
 		IC.Options.addLine('diverseOptions', 1);
 	})();
 	
-	IC.con.timeStamp('IkariamEnhancedUI: finance functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: finance functions created');
 	
 	// Functions for missing resources.
 	(function() {
@@ -893,7 +900,7 @@ function EnhancedUI(IC) {
 		IC.Options.addCheckbox('showColoured', 'missingResources', 2, true, IC.Language.$('missingResources.options.showColoured'), {});
 	})();
 	
-	IC.con.timeStamp('IkariamEnhancedUI: missing resource functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: missing resource functions created');
 	
 	// Functions for tooltips.
 	(function() {
@@ -1069,7 +1076,7 @@ function EnhancedUI(IC) {
 		IC.Options.addLine('diverseOptions', 1);
 	})();
 	
-	IC.con.timeStamp('IkariamEnhancedUI: tooltip functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: tooltip functions created');
 	
 	// Zoom function.
 	(function() {
@@ -1566,7 +1573,7 @@ function EnhancedUI(IC) {
 		_go_zoomOptions.create();
 	})();
 	
-	IC.con.timeStamp('IkariamEnhancedUI: zoom functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: zoom functions created');
 	
 	// Ressource information.
 	(function() {
@@ -2180,7 +2187,7 @@ function EnhancedUI(IC) {
 		], {});
 	})();
 	
-	IC.con.timeStamp('IkariamEnhancedUI: resource information functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: resource information functions created');
 	
 	// Member information in highscore view.
 	(function() {
@@ -2386,7 +2393,7 @@ function EnhancedUI(IC) {
 		IC.Options.addCheckbox('showMemberInformation', 'diverseOptions', 1, false, IC.Language.$('highscore.options.showMemberInformation'), { changeCallback: _go_memberInformation.updateSettings });
 	})();
 	
-	IC.con.timeStamp('IkariamEnhancedUI: highscore functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: highscore functions created');
 	
 	// Message enhancements.
 	(function() {
@@ -2459,6 +2466,50 @@ function EnhancedUI(IC) {
 		};
 		
 		/**
+		 * Storage for the inline message functions.
+		 * 
+		 * @type	{object}
+		 */
+		var _go_inlineMessage = new function() {
+			/**
+			 * Replace the links.
+			 */
+			var _lf_doShowInline = function() {
+				var la_messageRows = IC.myGM.$$('#deleteMessages tr.entry');
+				var li_displayMaxCharacters = 60;
+				
+				la_messageRows.forEach(function(ie_messageRow) {
+					var le_subject	= IC.myGM.$('.subject', ie_messageRow);
+					var ls_id		= ie_messageRow.id.replace('message', '');
+					var le_text		= IC.myGM.$('#tbl_mail' + ls_id + ' .msgText');
+					
+					var ls_inlineText = le_text.innerHTML.replace(/<br>/gi, ' ').replace(/\s+/gi, ' ');
+					
+					if(ls_inlineText.length > li_displayMaxCharacters)
+						ls_inlineText = ls_inlineText.substring(0, li_displayMaxCharacters - 6) + ' (...)';
+					
+					le_subject.innerHTML += '<br><sub>' + ls_inlineText + '</sub>';
+				});
+			};
+			
+			/**
+			 * Update the settings to execute the callback or delete the handler.
+			 * 
+			 * @param	{boolean}	ib_displayInlineMessage
+			 *   If the user selected the checkbox to display inline messages.
+			 */
+			this.updateSettings = function(ib_displayInlineMessage) {
+				var la_postboxes = ['diplomacyAdvisor', 'diplomacyAdvisorOutBox', 'diplomacyAdvisorArchive', 'diplomacyAdvisorArchiveOutBox'];
+				if(ib_displayInlineMessage === true) {
+					IC.RefreshHandler.add(la_postboxes, 'inlineMessage', _lf_doShowInline);
+					return;
+				}
+				
+				IC.RefreshHandler.remove(la_postboxes, 'inlineMessage');
+			};
+		};
+		
+		/**
 		 * Storage for the message signature functions.
 		 * 
 		 * @type	{object}
@@ -2525,6 +2576,9 @@ function EnhancedUI(IC) {
 		// Replace urls.
 		IC.Options.addCheckbox('replaceURL', 'messages', 1, true, IC.Language.$('message.options.replaceURL'), { changeCallback: _go_replaceURL.updateSettings });
 		
+		// Display message text teaser in overview.
+		IC.Options.addCheckbox('inlineMessage', 'messages', 1, true, IC.Language.$('message.options.inlineMessage'), { changeCallback: _go_inlineMessage.updateSettings });
+		
 		// Player specific signatures.
 		var la_options = [
 			{ value: 'none', label: IC.Language.$('message.options.signature.use.none') },
@@ -2545,7 +2599,7 @@ function EnhancedUI(IC) {
 		IC.Options.addTextArea('playerSignature', 'messages', 4, '', IC.Language.$('message.options.signature.player'), { 'specificity': IC.Options.SpecificityLevel.PLAYER });
 	})();
 	
-	IC.con.timeStamp('IkariamEnhancedUI: message functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: message functions created');
 	
 	// Troop information.
 	(function() {
@@ -2850,7 +2904,7 @@ function EnhancedUI(IC) {
 			 *   The extracted troops.
 			 */
 			var _lf_extractOwnTroops = function(ie_wrapper) {
-				var la_nameCells	= IC.myGM.$$('.table01 .title_img_row th', ie_wrapper);
+				var la_nameCells	= IC.myGM.$$('.table01 .title_img_row th .tooltip', ie_wrapper);
 				var la_numberCells	= IC.myGM.$$('.table01 .count td', ie_wrapper);
 				
 				var ro_troops = _go_storageProvider.ownTroopList();
@@ -2859,7 +2913,7 @@ function EnhancedUI(IC) {
 					var li_number = IC.Ikariam.getInt(la_numberCells[i].innerHTML);
 					
 					if(li_number > 0)
-						ro_troops.addTroop(la_nameCells[i].title, li_number);
+						ro_troops.addTroop(la_nameCells[i].innerHTML, li_number);
 				}
 				
 				return ro_troops;
@@ -2875,12 +2929,12 @@ function EnhancedUI(IC) {
 			 *   The extracted troops.
 			 */
 			var _lf_extractForeignTroops = function(ie_wrapper) {
-				var la_nameCells	= IC.myGM.$$('.table01 .title_img_row th:not(:first-child)', ie_wrapper);
+				var la_nameCells	= IC.myGM.$$('.table01 .title_img_row th:not(:first-child) .tooltip', ie_wrapper);
 				var la_numberRows	= IC.myGM.$$('.table01 tr:not(.title_img_row)', ie_wrapper);
 				var lo_numberCells	= {};
 				
 				for(var i = 0; i < la_numberRows.length; i++) {
-					var ls_playerName	= IC.myGM.$('td a', la_numberRows[i]).innerHTML;
+					var ls_playerName = IC.myGM.$('td a', la_numberRows[i]).innerHTML.trim();
 					
 					if(!lo_numberCells[ls_playerName]) {
 						lo_numberCells[ls_playerName] = [];
@@ -2898,7 +2952,7 @@ function EnhancedUI(IC) {
 						var li_number = IC.Ikariam.getInt(ia_numberCells[i].innerHTML);
 						
 						if(li_number > 0)
-							lo_playerTroops.addTroop(la_nameCells[i].title, li_number);
+							lo_playerTroops.addTroop(la_nameCells[i].innerHTML, li_number);
 					}
 					
 					if(lo_playerTroops.isEmpty === false)
@@ -2931,7 +2985,7 @@ function EnhancedUI(IC) {
 				var la_foreignStatus = ['friends', 'enemies'];
 				
 				for(var i = 0; i < la_foreignStatus.length; i++) {
-					var la_foreignTroops = _lf_extractForeignTroops(la_wrappers[i + 1]);
+					var la_foreignTroops = _lf_extractForeignTroops(la_wrappers[i + 2]);
 					
 					for(var j = 0; j < la_foreignTroops.length; j++) {
 						ro_return.addTroopList(la_foreignStatus[i], la_foreignTroops[j]);
@@ -3033,10 +3087,95 @@ function EnhancedUI(IC) {
 			};
 		};
 		
+		/**
+		 * Storage for the link barracks and shipyard functions.
+		 * 
+		 * @type	{object}
+		 */
+		var _go_linkBarrackShipyard = new function() {
+			/**
+			 * Adds a link to the container.
+			 * 
+			 * @param	{String}	is_type
+			 *   The link type (units / fleet).
+			 * @param	{Element}	ie_container
+			 *   The element which should be container for the link.
+			 */
+			var _lf_addLink = function(is_type, ie_container) {
+				var lo_data = IC.ika.getScreen().data;
+				
+				var ls_linkText = is_type === 'units' ? IC.Language.$('troopInformation.link.gotoBarracks') : IC.Language.$('troopInformation.link.gotoShipyard');
+				ls_linkText = '(' + ls_linkText + ')';
+				
+				var ls_buildingType = is_type === 'units' ? 'barracks' : 'shipyard';
+				
+				var li_position = -1;
+				for(var i = 0; i < lo_data.position.length; i++) {
+					if(lo_data.position[i].building === ls_buildingType) {
+						li_position = i;
+						break;
+					}
+				}
+				
+				if(li_position >= 0) {
+					var ls_href = '?view=%building%&cityId=%cityId%&position=%position%'
+											.replace(/%building%/gi, ls_buildingType)
+											.replace(/%cityId%/gi, lo_data.id)
+											.replace(/%position%/gi, li_position);
+					
+					IC.myGM.addElement('a', ie_container, {
+						innerHTML:	ls_linkText,
+						href:		ls_href,
+						onclick:	'ajaxHandlerCall(this.href);return false;',
+						style:		[['margin-left', '5px']]
+					});
+				}
+			};
+			
+			/**
+			 * Link barack and shipyard from troop overview screen.
+			 */
+			var _lf_doLinkBarrackShipyardOverview = function() {
+				var le_container = IC.myGM.$('.header', IC.myGM.$('#tabUnits'));
+				_lf_addLink('units', le_container);
+				
+				le_container = IC.myGM.$('.header', IC.myGM.$('#tabShips'));
+				_lf_addLink('fleet', le_container);
+			};
+			
+			/**
+			 * Link barrack and shipyard in dismiss units screen.
+			 */
+			var _lf_doLinkBarrackShipyardDismiss = function() {
+				var ls_type = IC.myGM.$('#js_garrisonEditForm input[name=function]').value.replace(/fire/gi, '').toLowerCase();
+				var le_container = IC.myGM.$('#js_garrisonEditForm .header');
+				
+				_lf_addLink(ls_type, le_container);
+			};
+			
+			/**
+			 * Update the settings to execute the callback or delete the handler.
+			 * 
+			 * @param	{boolean}	ib_linkBarrackShipyard
+			 *   If the user selected the checkbox to link barrackand shipyard.
+			 */
+			this.updateSettings = function(ib_linkBarrackShipyard) {
+				if(ib_linkBarrackShipyard === true) {
+					IC.RefreshHandler.add('cityMilitary', 'linkBarrackShipyardOverview', _lf_doLinkBarrackShipyardOverview);
+					IC.RefreshHandler.add('garrisonEdit', 'linkBarrackShipyardDismiss', _lf_doLinkBarrackShipyardDismiss);
+					return;
+				}
+				
+				IC.RefreshHandler.remove('cityMilitary', 'linkBarrackShipyardOverview');
+				IC.RefreshHandler.remove('garrisonEdit', 'linkBarrackShipyardDismiss');
+			};
+		};
+		
 		IC.Options.addCheckbox('showTroopInformation', 'diverseOptions', 1, true, IC.Language.$('troopInformation.options.show'), { changeCallback: _go_troopInformation.updateSettings });
+		IC.Options.addCheckbox('linkBarrackShipyard', 'diverseOptions', 1, true, IC.Language.$('troopInformation.options.linkBarrackShipyard'), { changeCallback: _go_linkBarrackShipyard.updateSettings });
 	})();
 	
-	IC.con.timeStamp('IkariamEnhancedUI: troop information functions created');
+	IC.con.logTimeStamp('IkariamEnhancedUI: troop information functions created');
 	IC.con.groupEnd();
 }
 
@@ -3047,18 +3186,18 @@ function EnhancedUI(IC) {
  */
 function main() {
 	// Get the Ikariam core.
-	var IC = new IkariamCore('3.3', 4369, 'Ikariam Enhanced UI', 'Tobbe', false);
+	var IC = new IkariamCore('3.4', 4369, 'Ikariam Enhanced UI', 'Tobbe', false);
 	
 	if(IC.myGM.alreadyExecuted === true)
 		return;
 	
 	IC.Language.setDefaultLanguage('en');
 	
-	IC.Language.addLanguageText('en', {"view": {"options": {"wrapperTitle":"View","moveLoadingCircle":"Move loading circle to position bar","hideBirds":"Hide the bird swarm","noVerticalCenterInTownAdvisor":"Don't center town information in the town advisor"}},"island": {"options": {"showColonizingCityInfo":"Show information about colonizing cities"}},"finance": {"options": {"showIncomeOnTop":"Show income on top in balance view","shortUpkeepReductionTable":"Show a short version of the upkeep reduction"},"income": {"perHour":"Income per hour","perDay":"Income per day","start":"Income without reduction"},"upkeep": {"reason": {"0":"Troops","1":"Ships","2":"Troops & Ships"},"basic":"Basic Costs","supply":"Supply Costs","result":"Total Costs"}},"missingResources": {"options": {"wrapperTitle":"Missing Resources","show":"Show missing resources in construction view","showPositive":"Show also the remaining resources after an upgrade","showColoured":"Show the remaining resources coloured"}},"tooltips": {"options": {"autoshow":"Show tooltips in alliance mebers view and military advisor automatically","showDirectInMilitaryAdvisor":"Show information about cargo / fleets in military view without tooltips"}},"zoom": {"options": {"wrapperTitle":"Zoom function","zoomView":"Activate zoom in world view, island view, town view","factor": {"world":"Zoom worldmap:","island":"Zoom island view:","town":"Zoom town view:"},"scaleChildren": {"label":"Let banners and symbols in normal size when zooming when zooming in this view:","world":"Worldmap","island":"Island view","town":"Town view"},"accessKeyLabel":"This keys must be pressed to zoom with the mouse:"},"zoomIn":"Zoom in","factor":"Zoom factor","zoomOut":"Zoom out"},"resourceInformation": {"options": {"wrapperTitle":"Resource Information","resourceQuicklinkEnhancements":"Link resource number to town hall / mines","directIncome": {"show":"Show the hourly income directly in town view","style": {"label":"Style of the hourly income in town view:","alignRight":"Right align","alignLeft":"Left align","withSeparation":"Right align with separation"}},"capacityBar": {"show":"Show info bar for warehouse capacity","hasBorder":"Has border","showBranchOfficeResources":"Show resources in trading post","orientation": {"label":"Orientation of the bar","vertical":"Vertical","horizontal":"Horizontal","horizontalFull":"Horizontal, full length"}}},"dailyProduction":"Daily production %$1:","dailyExpenses":"Daily expenses %$1:"},"highscore": {"options": {"showMemberInformation":"Enable the possibility to save highscore data of alliance members"},"memberInformation": {"show":"Alliance info","reset":"Reset","lastReset":"Time since the last reset: %$1","noReset":"No reset so far."}},"message": {"options": {"wrapperTitle":"Messages","replaceURL":"Make links in messages clickable","signature": {"use": {"description":"Use this signature:","none":"No signature","global":"Global signature","server":"Server signature","player":"Player signature"},"placementTop":"Insert signature above cited messages","global":"Global signature, which would be used on every world:","server":"Server signature, which only would be used on this world:","player":"Player signature, which only would be used for this player:"}},"replacedUrl": {"notification": {"header":"Attention!","text":"You're going to open the link %$1. This happens on your own risk. Proceed?"}}},"troopInformation": {"options": {"show":"Show troop info"},"units": {"label":"Units in %$1","own":"Own units","friends":"Allied units","enemies":"Enemy units"},"ships": {"label":"Ships in %$1","own":"Own ships","friends":"Allied ships","enemies":"Enemy ships"},"button":"Troop information","header":"Troops in %$1","noTroops":"There are no troops in %$1"},"diverse": {"options": {"wrapperTitle":"Diverse"},"name": {"resource": {"gold":"Gold","wood":"Building Material","wine":"Wine","marble":"Marble","glass":"Crystal Glass","sulfur":"Sulphur"},"unit": {"swordsman":"Swordsman","phalanx":"Hoplite","archer":"Archer","marksman":"Sulphur Carabineer","mortar":"Mortar","slinger":"Slinger","catapult":"Catapult","ram":"Battering Ram","steamgiant":"Steam Giant","bombardier":"Balloon-Bombardier","cook":"Cook","medic":"Doctor","girocopter":"Gyrocopter","spearman":"Spearman","spartan":"Spartan"},"ship": {"ballista":"Ballista Ship","catapult":"Catapult Ship","flamethrower":"Fire Ship","mortar":"Mortar Ship","ram":"Ram Ship","steamboat":"Steam Ram","rocketship":"Rocket Ship","submarine":"Diving Boat","paddlespeedship":"Paddle Speedboat","ballooncarrier":"Balloon Carrier","tender":"Tender","transport":"Merchant Ship"}}}});
+	IC.Language.addLanguageText('en', {"view": {"options": {"wrapperTitle":"View","moveLoadingCircle":"Move loading circle to position bar","hideBirds":"Hide the bird swarm","noVerticalCenterInTownAdvisor":"Don't center town information in the town advisor"}},"island": {"options": {"showColonizingCityInfo":"Show information about colonizing cities"}},"finance": {"options": {"showIncomeOnTop":"Show income on top in balance view","shortUpkeepReductionTable":"Show a short version of the upkeep reduction"},"income": {"perHour":"Income per hour","perDay":"Income per day","start":"Income without reduction"},"upkeep": {"reason": {"0":"Troops","1":"Ships","2":"Troops & Ships"},"basic":"Basic Costs","supply":"Supply Costs","result":"Total Costs"}},"missingResources": {"options": {"wrapperTitle":"Missing Resources","show":"Show missing resources in construction view","showPositive":"Show also the remaining resources after an upgrade","showColoured":"Show the remaining resources coloured"}},"tooltips": {"options": {"autoshow":"Show tooltips in alliance mebers view and military advisor automatically","showDirectInMilitaryAdvisor":"Show information about cargo / fleets in military view without tooltips"}},"zoom": {"options": {"wrapperTitle":"Zoom function","zoomView":"Activate zoom in world view, island view, town view","factor": {"world":"Zoom worldmap:","island":"Zoom island view:","town":"Zoom town view:"},"scaleChildren": {"label":"Let banners and symbols in normal size when zooming when zooming in this view:","world":"Worldmap","island":"Island view","town":"Town view"},"accessKeyLabel":"This keys must be pressed to zoom with the mouse:"},"zoomIn":"Zoom in","factor":"Zoom factor","zoomOut":"Zoom out"},"resourceInformation": {"options": {"wrapperTitle":"Resource Information","resourceQuicklinkEnhancements":"Link resource number to town hall / mines","directIncome": {"show":"Show the hourly income directly in town view","style": {"label":"Style of the hourly income in town view:","alignRight":"Right align","alignLeft":"Left align","withSeparation":"Right align with separation"}},"capacityBar": {"show":"Show info bar for warehouse capacity","hasBorder":"Has border","showBranchOfficeResources":"Show resources in trading post","orientation": {"label":"Orientation of the bar","vertical":"Vertical","horizontal":"Horizontal","horizontalFull":"Horizontal, full length"}}},"dailyProduction":"Daily production %$1:","dailyExpenses":"Daily expenses %$1:"},"highscore": {"options": {"showMemberInformation":"Enable the possibility to save highscore data of alliance members"},"memberInformation": {"show":"Alliance info","reset":"Reset","lastReset":"Time since the last reset: %$1","noReset":"No reset so far."}},"message": {"options": {"wrapperTitle":"Messages","replaceURL":"Make links in messages clickable","inlineMessage":"Embed the first few characters of each message in the messages overview","signature": {"use": {"description":"Use this signature:","none":"No signature","global":"Global signature","server":"Server signature","player":"Player signature"},"placementTop":"Insert signature above cited messages","global":"Global signature, which would be used on every world:","server":"Server signature, which only would be used on this world:","player":"Player signature, which only would be used for this player:"}},"replacedUrl": {"notification": {"header":"Attention!","text":"You're going to open the link %$1. This happens on your own risk. Proceed?"}}},"troopInformation": {"options": {"show":"Show troop info","linkBarrackShipyard":"Link barracks and shipyard from troop overview and dismiss units screen"},"link": {"gotoBarracks":"goto barracks","gotoShipyard":"goto shipyard"},"units": {"label":"Units in %$1","own":"Own units","friends":"Allied units","enemies":"Enemy units"},"ships": {"label":"Ships in %$1","own":"Own ships","friends":"Allied ships","enemies":"Enemy ships"},"button":"Troop information","header":"Troops in %$1","noTroops":"There are no troops in %$1"},"diverse": {"options": {"wrapperTitle":"Diverse"},"name": {"resource": {"gold":"Gold","wood":"Building Material","wine":"Wine","marble":"Marble","glass":"Crystal Glass","sulfur":"Sulphur"},"unit": {"swordsman":"Swordsman","phalanx":"Hoplite","archer":"Archer","marksman":"Sulphur Carabineer","mortar":"Mortar","slinger":"Slinger","catapult":"Catapult","ram":"Battering Ram","steamgiant":"Steam Giant","bombardier":"Balloon-Bombardier","cook":"Cook","medic":"Doctor","girocopter":"Gyrocopter","spearman":"Spearman","spartan":"Spartan"},"ship": {"ballista":"Ballista Ship","catapult":"Catapult Ship","flamethrower":"Fire Ship","mortar":"Mortar Ship","ram":"Ram Ship","steamboat":"Steam Ram","rocketship":"Rocket Ship","submarine":"Diving Boat","paddlespeedship":"Paddle Speedboat","ballooncarrier":"Balloon Carrier","tender":"Tender","transport":"Merchant Ship"}}}});
 	
 	var la_language = ['de', 'gr', 'fr', 'it', 'lv', 'ru', 'tr'];
 	for(var i = 0; i < la_language.length; i++) {
-		IC.Language.registerLanguageResource(la_language[i], la_language[i], 'http://resources.ikascripts.de/IkariamEnhancedUI/v3.3/' + la_language[i] + '.json');
+		IC.Language.registerLanguageResource(la_language[i], la_language[i], 'http://resources.ikascripts.de/IkariamEnhancedUI/v3.4/' + la_language[i] + '.json');
 	}
 	
 	// Instantiate the ui script.
