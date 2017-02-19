@@ -69,20 +69,21 @@
 			 * Callback to show the income on top.
 			 */
 			var _lf_doShowIncomeOnTop = function() {
-				var le_summaryTable	= IC.myGM.$('.table01');
+				var le_summaryTable	= IC.myGM.$('.table01 tbody');
 				var li_income		= _go_generalFunctions.getIncome();
 				
 				var la_incomeCells = [
 					{ className: ['sigma'], text: IC.Language.$('finance.income.perHour') },
-					{ className: ['value', 'res'] },
-					{ className: ['value', 'res'] },
-					{ className: ['value', 'res'], text: IC.Ikariam.formatToIkaNumber(li_income) }
+					{ className: ['nowrap', 'res'], text: IC.Ikariam.formatToIkaNumber(li_income) }
 				];
-				_go_generalFunctions.createTableRow(le_summaryTable, ['result', 'alt'], la_incomeCells);
+				_go_generalFunctions.createTableRow(le_summaryTable, [], la_incomeCells);
 				
 				la_incomeCells[0].text = IC.Language.$('finance.income.perDay');
-				la_incomeCells[3].text = IC.Ikariam.formatToIkaNumber(li_income * 24);
-				_go_generalFunctions.createTableRow(le_summaryTable, ['result'], la_incomeCells);
+				la_incomeCells[1].text = IC.Ikariam.formatToIkaNumber(li_income * 24);
+				_go_generalFunctions.createTableRow(le_summaryTable, [], la_incomeCells);
+				
+				var le_premiumCell = IC.myGM.$('.premiumOffer', le_summaryTable);
+				le_premiumCell.rowSpan = le_premiumCell.rowSpan + 2;
 				
 				// Adjust the size of the Scrollbar.
 				IC.ika.controller.adjustSizes();
@@ -180,10 +181,10 @@
 					classes:	[],
 					isHeadRow:	true,
 					cells:		[
-						 { className: ['city'] },
-						 { className: ['value', 'res'], text: IC.Language.$('finance.upkeep.basic') },
-						 { className: ['value', 'res'], text: IC.Language.$('finance.upkeep.supply') },
-						 { className: ['value', 'res'], text: IC.Language.$('finance.upkeep.result') }
+						 { className: ['city', 'left'] },
+						 { className: ['left'], text: IC.Language.$('finance.upkeep.basic') },
+						 { className: ['left'], text: IC.Language.$('finance.upkeep.supply') },
+						 { className: ['left'], text: IC.Language.$('finance.upkeep.result') }
 					]
 				});
 				
@@ -192,10 +193,10 @@
 					classes:	['alt', 'bottomLine'],
 					isHeadRow:	false,
 					cells:		[
-						{ className: ['city'], text: IC.Language.$('finance.income.start') },
-						{ className: ['value', 'res'] },
-						{ className: ['value', 'res'] },
-						{ className: ['value', 'res'], text: IC.Ikariam.formatToIkaNumber(lo_data.priorToReduction) }
+						{ className: ['city', 'left'], text: IC.Language.$('finance.income.start') },
+						{ className: ['nowrap', 'res'] },
+						{ className: ['nowrap', 'res'] },
+						{ className: ['nowrap', 'res'], text: IC.Ikariam.formatToIkaNumber(lo_data.priorToReduction) }
 					]
 				});
 				
@@ -209,10 +210,10 @@
 						classes:	trClass,
 						isHeadRow:	false,
 						cells:		[
-							{ className: ['city'],			text: io_row.reason },
-							{ className: ['value', 'res'],	text: IC.Ikariam.formatToIkaNumber(-io_row.basicUpkeep) },
-							{ className: ['value', 'res'],	text: IC.Ikariam.formatToIkaNumber(-io_row.supplyUpkeep) },
-							{ className: ['hidden'],			text: IC.Ikariam.formatToIkaNumber(-io_row.result) }
+							{ className: ['city', 'left'],	text: io_row.reason },
+							{ className: ['nowrap', 'res'],	text: IC.Ikariam.formatToIkaNumber(-io_row.basicUpkeep) },
+							{ className: ['nowrap', 'res'],	text: IC.Ikariam.formatToIkaNumber(-io_row.supplyUpkeep) },
+							{ className: ['nowrap', 'res'],	text: IC.Ikariam.formatToIkaNumber(-io_row.result) }
 						]
 					});
 				});
@@ -222,10 +223,10 @@
 					classes:	['result'],
 					isHeadRow:	false,
 					cells:		[
-						{ className: ['sigma'], text: '<img alt="Summe" src="skin/layout/sigma.png">' },
-						{ className: ['value', 'res'] },
-						{ className: ['value', 'res'] },
-						{ className: ['hidden'], text: IC.Ikariam.formatToIkaNumber(lo_data.income) }
+						{ className: ['sigma', 'left'], text: '<img alt="Summe" src="skin/layout/sigma.png">' },
+						{ className: ['nowrap', 'res'] },
+						{ className: ['nowrap', 'res'] },
+						{ className: ['nowrap', 'res'],	text: IC.Ikariam.formatToIkaNumber(lo_data.income) }
 					]
 				});
 				
@@ -241,7 +242,7 @@
 			var _lf_createNewTable = function(ia_oldUpkeepReductionTables) {
 				var le_shortTable	= IC.myGM.addElement('table', ia_oldUpkeepReductionTables[0].parentNode, { 
 					'id':		'balance',
-					'classes':	['table01', 'border', 'left']
+					'classes':	['table01', 'border']
 				}, null, ia_oldUpkeepReductionTables[0]);
 				
 				var la_tableRows = _lf_prepareTableRows(ia_oldUpkeepReductionTables);
