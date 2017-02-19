@@ -93,6 +93,9 @@
 					
 					le_subject.innerHTML += '<br><sub>' + ls_inlineText + '</sub>';
 				});
+				
+				// Adjust the size of the Scrollbar.
+				IC.ika.controller.adjustSizes();
 			};
 			
 			/**
