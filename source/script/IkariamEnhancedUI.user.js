@@ -41,8 +41,10 @@
 // @bug				All				The selected island is not centered in world view.
 // @bug				All				If you are zooming to more than 100%, the view is not centered correctly after a page reload.
 // 
+// @history			4.0		Release: 10.11.2017
 // @history			4.0		Core: Update to Version 3.0 - Adjust to work with Greasemonkey 4.0 and Firefox 57
-// @history			4.0		Change: Adjust the script to work with Greasemonkey 4.0 and Firefox 57
+// @history			4.0		Change: Adjust the script to work with Greasemonkey 4.0 and Firefox 57.
+// @history			4.0		Bugfix: Global messages break embedded messages preview.
 // @history			4.0		Bugfix: Formatting of income table was changed.
 // 
 // @history			3.4		Release: 19.02.2017
