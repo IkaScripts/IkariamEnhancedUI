@@ -31,23 +31,24 @@
 			 * Show the data.
 			 */
 			var _lf_clickShow = function() {
-				IC.myGM.setValue('memberInfo_infoLinkClicked', true);
-				
-				IC.myGM.$('#tab_highscore input[name="searchUser"]').value	= '';
-				IC.myGM.$('#searchOnlyFriends').checked						= false;
-				IC.myGM.$('#searchOnlyAllies').checked						= true;
-				
-				IC.myGM.$('#tab_highscore input[type="submit"]').click();
+				IC.myGM.setValue('memberInfo_infoLinkClicked', true).then(function() {
+					IC.myGM.$('#tab_highscore input[name="searchUser"]').value	= '';
+					IC.myGM.$('#searchOnlyFriends').checked						= false;
+					IC.myGM.$('#searchOnlyAllies').checked						= true;
+					
+					IC.myGM.$('#tab_highscore input[type="submit"]').click();
+				});
 			};
 			
 			/**
 			 * Reset the stored data.
 			 */
 			var _lf_clickReset = function() {
-				IC.myGM.setValue(_ls_dataKey, _lo_data);
-				IC.myGM.setValue(_ls_timeKey, (new Date).getTime());
-				
-				_lf_clickShow();
+				IC.myGM.setValue(_ls_dataKey, _lo_data).then(function() {
+					return IC.myGM.setValue(_ls_timeKey, (new Date).getTime());
+				}).then(function() {
+					_lf_clickShow();
+				});
 			};
 			
 			/**
@@ -98,12 +99,12 @@
 			/**
 			 * Get the data and show the differences to the last stored data.
 			 * 
-			 * @return	{object}
-			 *   The member data.
+			 * @return	{Promise}
+			 *   A Promise which resolves to the member data.
 			 */
-			var _lf_getDataShowDifference = function() {
+			var _lf_getDataShowDifference = async function() {
 				var ro_memberInfo		= {};
-				var lo_oldMemberInfo	= IC.myGM.getValue(_ls_dataKey, null);
+				var lo_oldMemberInfo	= await IC.myGM.getValue(_ls_dataKey, null);
 				var la_allyMemberRows	= IC.myGM.$$('table.highscore tr.ownally');
 				
 				la_allyMemberRows.forEach(function(ie_allyMemberRow) {
@@ -128,14 +129,17 @@
 				
 				ro_memberInfo['own'] = _lf_getOwnDataShowDifference(lo_oldMemberInfo);
 				
-				return ro_memberInfo;
+				return Promise.resolve(ro_memberInfo);
 			};
 			
 			/**
 			 * Add the span with the time of the last reset.
+			 * 
+			 * @return	{Promise}
+			 *   A Promise which resolves once the last reset time is added.
 			 */
-			var _lf_addLastResetTime = function() {
-				var li_lastResetTime	= IC.myGM.getValue(_ls_timeKey, 0);
+			var _lf_addLastResetTime = async function() {
+				var li_lastResetTime	= await IC.myGM.getValue(_ls_timeKey, 0);
 				var li_differenceInSec	= ((new Date()).getTime() - li_lastResetTime) / 1000;
 				var ls_lastReset		= IC.Language.$('highscore.memberInformation.noReset');
 				
@@ -156,17 +160,20 @@
 			
 			/**
 			 * Prepare the highscore popup to show the data and show the data if requested.
+			 * 
+			 * @return	{Promise}
+			 *   A Promise which resolves once the popup is prepared.
 			 */
-			var _lf_doPreparePopup = function() {
+			var _lf_doPreparePopup = async function() {
 				_ls_dataKey = IC.Ikariam.serverCode + '_' + IC.ika.getModel().avatarAllyId + '_memberInfo_data_' + IC.myGM.getSelectValue('js_highscoreType', true, true);
 				_ls_timeKey = IC.Ikariam.serverCode + '_' + IC.ika.getModel().avatarAllyId + '_memberInfo_time_' + IC.myGM.getSelectValue('js_highscoreType', true, true);
 				
 				_lf_addShowButton();
 				
-				if(IC.myGM.getValue('memberInfo_infoLinkClicked', false) === true) {
-					IC.myGM.deleteValue('memberInfo_infoLinkClicked');
-					
-					_lo_data = _lf_getDataShowDifference();
+				var lb_linkClicked = await IC.myGM.getValue('memberInfo_infoLinkClicked', false);
+				if(lb_linkClicked === true) {
+					await IC.myGM.deleteValue('memberInfo_infoLinkClicked');
+					_lo_data = await _lf_getDataShowDifference();
 					_lf_addResetButton();
 					_lf_addLastResetTime();
 				}

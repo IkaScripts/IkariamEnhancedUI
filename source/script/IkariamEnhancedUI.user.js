@@ -24,18 +24,26 @@
 // 
 // @grant			unsafeWindow
 // @grant			GM_setValue
+// @grant			GM.setValue
 // @grant			GM_getValue
+// @grant			GM.getValue
 // @grant			GM_deleteValue
+// @grant			GM.deleteValue
 // @grant			GM_listValues
+// @grant			GM.listValues
 // @grant			GM_getResourceText
+// @grant			GM.getResourceText
 // @grant			GM_xmlhttpRequest
+// @grant			GM.xmlHttpRequest
 // 
 // @bug				Opera & Chrome	Zooming with the mouse is not possible with "Shift" as access key.
 // @bug				Opera & Chrome	No updating of the missing resources is possible due to a missing modification listener.
 // @bug				All				The selected island is not centered in world view.
 // @bug				All				If you are zooming to more than 100%, the view is not centered correctly after a page reload.
 // 
-// @history			next	Bugfix: Formatting of income table was changed.
+// @history			4.0		Core: Update to Version 3.0 - Adjust to work with Greasemonkey 4.0 and Firefox 57
+// @history			4.0		Change: Adjust the script to work with Greasemonkey 4.0 and Firefox 57
+// @history			4.0		Bugfix: Formatting of income table was changed.
 // 
 // @history			3.4		Release: 19.02.2017
 // @history			3.4		Core: Update to Version 2.3.3 - Bug fix (crew conversion broken)
@@ -321,20 +329,20 @@ function EnhancedUI(IC) {
  * Inits the Ikariam Core and calls the script functions.<br>
  * Must be called with <pre>setTimeout(main, 0)</pre> for correct setting of some core variables.
  */
-function main() {
+async function main() {
 	// Get the Ikariam core.
 	var IC = new IkariamCore('//@SCRIPT_VERSION@//', //@SCRIPT_ID@//, '//@SCRIPT_NAME@//', '//@SCRIPT_AUTHOR_NAME@//', //@SCRIPT_DEBUG@//);
 	
 	if(IC.myGM.alreadyExecuted === true)
 		return;
 	
-	IC.Language.setDefaultLanguage('en');
+	await IC.Language.setDefaultLanguage('en');
 	
-	IC.Language.addLanguageText('en', //@SCRIPT_LANGUAGE_DEFAULT@//);
+	await IC.Language.addLanguageText('en', //@SCRIPT_LANGUAGE_DEFAULT@//);
 	
 	var la_language = //@SCRIPT_TRANSLATIONS_ARRAY@//;
 	for(var i = 0; i < la_language.length; i++) {
-		IC.Language.registerLanguageResource(la_language[i], la_language[i], '//@RESOURCE_LANGUAGE_URL@///' + la_language[i] + '.json');
+		await IC.Language.registerLanguageResource(la_language[i], la_language[i], '//@RESOURCE_LANGUAGE_URL@///' + la_language[i] + '.json');
 	}
 	
 	// Instantiate the ui script.
