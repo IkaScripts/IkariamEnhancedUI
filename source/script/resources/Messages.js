@@ -82,9 +82,10 @@
 				var li_displayMaxCharacters = 60;
 				
 				la_messageRows.forEach(function(ie_messageRow) {
-					var le_subject	= IC.myGM.$('.subject', ie_messageRow);
-					var ls_id		= ie_messageRow.id.replace('message', '');
-					var le_text		= IC.myGM.$('#tbl_mail' + ls_id + ' .msgText');
+					var le_subject		= IC.myGM.$('.subject', ie_messageRow);
+					var ls_typePrefix	= /gmessage/.test(ie_messageRow.id) === true ? 'g' : '';
+					var ls_id			= ie_messageRow.id.replace(ls_typePrefix + 'message', '');
+					var le_text			= IC.myGM.$('#tbl_' + ls_typePrefix + 'mail' + ls_id + ' .msgText');
 					
 					var ls_inlineText = le_text.innerHTML.replace(/<br>/gi, ' ').replace(/\s+/gi, ' ');
 					
