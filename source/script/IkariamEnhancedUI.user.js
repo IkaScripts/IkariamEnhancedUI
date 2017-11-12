@@ -42,7 +42,7 @@
 // @bug				All				If you are zooming to more than 100%, the view is not centered correctly after a page reload.
 // 
 // @history			4.1		Release: 12.11.2017
-// @history			4.1		Core: Update to Version 3.1 - support translations in Greasemonkey 4.0
+// @history			4.1		Core: Update to Version 3.1 - Support translations in Greasemonkey 4.0
 // 
 // @history			4.0		Release: 10.11.2017
 // @history			4.0		Core: Update to Version 3.0 - Adjust to work with Greasemonkey 4.0 and Firefox 57
