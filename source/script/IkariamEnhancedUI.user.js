@@ -41,6 +41,9 @@
 // @bug				All				The selected island is not centered in world view.
 // @bug				All				If you are zooming to more than 100%, the view is not centered correctly after a page reload.
 // 
+// @history			4.1.0.1	Release: 14.11.2017
+// @history			4.1.0.1	Core: Update to Version 3.1.0.1 - Fix issue with Greasemonkey 4.0 and incorrect link to translation files
+// 
 // @history			4.1		Release: 12.11.2017
 // @history			4.1		Core: Update to Version 3.1 - Support translations in Greasemonkey 4.0
 // 
