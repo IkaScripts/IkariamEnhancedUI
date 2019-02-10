@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="IkariamCore" default="buildTest" basedir=".">
+<project name="IkariamEnhancedUI" default="buildTest" basedir=".">
 	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
 	
 	<buildnumber file="build-number.properties" />
@@ -7,7 +7,6 @@
 	<property file="build-version.properties" />
 	<property file="build.properties" />
 	
-	<target name="deployRelease" depends="buildRelease, _deployRelease" />
 	<target name="deployTest" depends="buildTest, _deployTest" />
 	<target name="updateTranslations" depends="_loadLocalProperties, _updateTranslations" />
 	<target name="buildRelease" depends="updateTranslations, _buildRelease" />
@@ -78,17 +77,21 @@
 					</else>
 				</if>
 				
-				<get src="${transifex.url}/@{toFetch}/?mode=onlytranslated&amp;file" dest="${dir.source.localization}/${fileName}" username="${transifex.user}" password="${transifex.password}"/>
+				<if>
+					<equals arg1="@{toFetch}" arg2="en" />
+					<then>
+						<!-- Do nothing. English is master language -->
+					</then>
+					<else>
+						<get src="${transifex.url}/@{toFetch}/?mode=onlytranslated&amp;file" dest="${dir.source.localization}/${fileName}" username="${transifex.user}" password="${transifex.password}"/>
+					</else>
+				</if>
 			</sequential>
 		</for>
 	</target>
 	
 	<target name="_deployTest">
 		<ftppush level="test" source="${dir.build}" />
-	</target>
-	
-	<target name="_deployRelease">
-		<ftppush level="release" source="${dir.release.localization}" />
 	</target>
 	
 	<macrodef name="merge">
@@ -100,15 +103,6 @@
 			<copy todir="${dir.build.localization}" encoding="UTF-8">
 				<fileset dir="${dir.source.localization}" includes="*.json" />
 			</copy>
-			<loadfile property="script.language.default" srcfile="${dir.build.localization}/en.json">
-				<filterchain>
-					<tokenfilter>
-						<deletecharacters chars="\t"/>
-						<trim />
-					</tokenfilter>
-					<striplinebreaks />
-				</filterchain>
-			</loadfile>
 			
 			<!-- script files -->
 			<loadfile property="enhance.view"					srcFile="${dir.source.script.resource}/View.js"					encoding="UTF-8" />
@@ -123,8 +117,7 @@
 			<loadfile property="enhance.troopInformation"		srcFile="${dir.source.script.resource}/TroopInformation.js"		encoding="UTF-8" />
 			
 			<!-- language resource includes -->
-			<var name="resource.language.includes" value="" />
-			<var name="script.translations.array" value="" />
+			<var name="script.translations.data" value="" />
 			<for list="${script.translations.available}" param="translation" delimiter=",">
 				<sequential>
 					<if>
@@ -137,18 +130,21 @@
 						</else>
 					</if>
 					
-					<var name="resource.language.includes" value="${resource.language.includes}${line.separator}// @resource&#x0009;&#x0009;${usedTranslation}&#x0009;&#x0009;&#x0009;&#x0009;&#x0009;${resource.language.url.@{level}}/${usedTranslation}.json" />
+					<var name="translations" unset="true" />
+					<loadfile property="translations" srcfile="${dir.build.localization}/${usedTranslation}.json" encoding="UTF-8">
+						<filterchain>
+							<tokenfilter>
+								<deletecharacters chars="\t"/>
+								<trim />
+							</tokenfilter>
+							<striplinebreaks />
+						</filterchain>
+					</loadfile>
 					
-					<var name="script.translations.array" value="${script.translations.array}'${usedTranslation}'" />
+					<var name="script.translations.data" value="${script.translations.data}{ code: '${usedTranslation}', translations: ${translations} }" />
 				</sequential>
 			</for>
-			<for list="${ikariamCore.translations.available}" param="translation" delimiter=",">
-				<sequential>
-					<var name="resource.language.includes" value="${resource.language.includes}${line.separator}// @resource&#x0009;&#x0009;core_@{translation}&#x0009;&#x0009;&#x0009;&#x0009;${resource.ikariamCore.language.url.@{level}}/core_@{translation}.json" />
-					<var name="resource.language.includes" value="${resource.language.includes}${line.separator}// @resource&#x0009;&#x0009;core_@{translation}_settings&#x0009;${resource.ikariamCore.language.url.@{level}}/core_@{translation}_settings.json" />
-				</sequential>
-			</for>
-			<propertyregex property="script.translations.array" override="true" input="[${script.translations.array}]" regexp="''" replace="', '" />
+			<propertyregex property="script.translations.data" override="true" input="[${line.separator}&#x0009;&#x0009;${script.translations.data}${line.separator}&#x0009;]" regexp="\}\{" replace="},${line.separator}&#x0009;&#x0009;{" />
 			
 			<copy todir="${dir.build}" encoding="UTF-8">
 				<fileset dir="${dir.source.script}" includes="*.js" />
@@ -164,14 +160,11 @@
 					<filter token="SCRIPT_LINK_GREASY_FORK"	value="${script.link.greasyFork}" />
 					<filter token="SCRIPT_LINK_GITHUB"		value="${script.link.github}" />
 					<filter token="SCRIPT_DEBUG"			value="@{debug}" />
-					<filter token="SCRIPT_LANGUAGE_DEFAULT"	value="${script.language.default}" />
 					
 					<filter token="SCRIPT_DESCRIPTION_DEFAULT"	value="${script.description.default}" />
 					<filter token="SCRIPT_DESCRIPTION_DE"		value="${script.description.de}" />
 					
-					<filter token="SCRIPT_TRANSLATIONS_ARRAY"	value="${script.translations.array}" />
-					<filter token="RESOURCE_LANGUAGE_URL"		value="${resource.language.url.@{level}}" />
-					<filter token="RESOURCE_LANGUAGE_INCLUDES"	value="${resource.language.includes}" />
+					<filter token="SCRIPT_TRANSLATIONS_DATA"	value="${script.translations.data}" />
 					<filter token="REQUIRE_IKARIAM_CORE"		value="${require.ikariamCore.@{level}}" />
 					
 					<filter token="ENHANCE_VIEW"					value="${enhance.view}" />
