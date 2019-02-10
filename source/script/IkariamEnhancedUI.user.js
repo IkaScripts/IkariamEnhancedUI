@@ -39,10 +39,11 @@
 // @bug				All				The selected island is not centered in world view.
 // @bug				All				If you are zooming to more than 100%, the view is not centered correctly after a page reload.
 // 
-// @history			next	Release: ???
-// @history			next	Core: Update to Version 3.2 - Greasy Fork prohibits update check intervals smaller than 24 hours
-// @history			next	Core: Update to Version 3.2 - Include all translations in the script and remove external dependencies for translations
-// @history			next	Language: Include all translations in the script and remove external dependencies for translations
+// @history			4.2		Release: 10.02.2019
+// @history			4.2		Core: Update to Version 3.2.1 - Greasy Fork prohibits update check intervals smaller than 24 hours
+// @history			4.2		Core: Update to Version 3.2.1 - Include all translations in the script and remove external dependencies for translations
+// @history			4.2		Language: Include all translations in the script and remove external dependencies for translations
+// @history			4.2		Language: Update Russian translation
 // 
 // @history			4.1.0.1	Release: 14.11.2017
 // @history			4.1.0.1	Core: Update to Version 3.1.0.1 - Fix issue with Greasemonkey 4.0 and incorrect link to translation files
